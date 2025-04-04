@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Database
+*.db
+database.db
+
+# Uploads
+app/public/uploads/*
+!app/public/uploads/.gitkeep
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo 

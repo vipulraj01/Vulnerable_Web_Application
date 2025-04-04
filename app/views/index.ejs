@@ -1,0 +1,142 @@
+<div class="card">
+  <h1>Welcome to the Web App</h1>
+  <p class="subtitle">A beautiful and modern web experience with glassmorphism design.</p>
+  
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">
+        <i class="fas fa-user-shield"></i>
+      </div>
+      <h3>User Authentication</h3>
+      <p>Secure signup and login for multiple users with profile management.</p>
+    </div>
+    
+    <div class="feature">
+      <div class="feature-icon">
+        <i class="fas fa-images"></i>
+      </div>
+      <h3>Image Gallery</h3>
+      <p>Upload and view your personal collection of images in a beautiful gallery.</p>
+    </div>
+    
+    <div class="feature">
+      <div class="feature-icon">
+        <i class="fas fa-edit"></i>
+      </div>
+      <h3>Create Posts</h3>
+      <p>Share your thoughts by creating text posts on your dashboard.</p>
+    </div>
+  </div>
+  
+  <% if (typeof user === 'undefined' || !user) { %>
+    <div class="cta-container">
+      <a href="/login" class="cta-button login-btn">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+      <a href="/register" class="cta-button register-btn">
+        <i class="fas fa-user-plus"></i> Register
+      </a>
+    </div>
+  <% } else { %>
+    <div class="cta-container">
+      <a href="/dashboard" class="cta-button dashboard-btn">
+        <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+      </a>
+    </div>
+  <% } %>
+</div>
+
+<style>
+  .subtitle {
+    font-size: 1.2rem;
+    color: rgba(0,0,0,0.6);
+    margin-bottom: 2rem;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .feature {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0071e3, #00c6fb);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 113, 227, 0.2);
+  }
+  
+  .feature-icon i {
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .feature h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .login-btn {
+    background: var(--accent-color);
+    color: white;
+  }
+  
+  .register-btn {
+    background: rgba(255,255,255,0.3);
+    color: var(--text-color);
+    border: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+  }
+  
+  .dashboard-btn {
+    background: var(--accent-color);
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style> 
