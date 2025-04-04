@@ -21,7 +21,7 @@ A simple web application with user authentication, file uploads, and user posts.
 
 1. Clone the repository or extract the project files
    ```
-   git clone <repository-url> or unzip the project files
+   git clone https://github.com/vipulraj01/Vulnerable_Web_Application or unzip the project files
    ```
 
 2. Navigate to the project directory
